@@ -1,0 +1,646 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif, 'Piazzolla', serif;
+  color: #323232;
+}
+
+li {
+  list-style-type: none;
+}
+
+li:hover {
+  background: orange;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin-bottom: 3.5rem;
+}
+
+section:last-of-type {
+  margin-bottom: 0;
+}
+
+.offscreen,
+.get-started-cards h3 {
+  position: absolute;
+  clip: rect(1px 1px 1px 1px); /* for Internet Explorer */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.cards-container,
+.stats-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.keywords-cards h3,
+.stats h3 {
+  max-width: 87.5rem;
+  margin: 0 auto;
+}
+
+/* containers for main and footer only */
+.grid-container {
+  display: grid;
+}
+
+/* ============= typography ============== */
+.banner h2,
+.testimony-quote,
+.author,
+.kw-card span {
+  font-family: 'Piazzolla', Georgia, 'Times New Roman', Times, serif;
+}
+
+header,
+.banner span,
+.banner ::placeholder,
+.card,
+.testimonials h3,
+.keywords-cards h3,
+.keywords-cards h4 {
+  font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header,
+.banner span,
+.banner p,
+.card h4,
+.testimonials h3,
+.keywords-cards h3,
+.keywords-cards h4,
+.stats h3,
+.stat-count span {
+  text-transform: uppercase;
+}
+
+.testimonials,
+.keywords-cards h3,
+.stats h3 {
+  color: #2c3e5b;
+  font-weight: 700;
+}
+
+/* banner */
+.banner h2 {
+  text-transform: none;
+  color: #d0cfc5;
+  font-size: clamp(2.375rem, 5.324vw, 2.658rem);
+  font-weight: 500;
+  line-height: 1.35;
+  margin-bottom: 1.25rem;
+}
+
+.banner ::placeholder {
+  font-weight: 400;
+  font-size: clamp(1.05rem, 1.622vw, 1.1rem);
+}
+
+.banner span {
+  color: white;
+  font-size: clamp(3.1875rem, 4.571vw, 4.1rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.banner p {
+  font-size: clamp(1rem, 1.81vw, 1.2rem);
+  font-weight: 400;
+}
+
+/* card */
+.card h4 {
+  font-size: clamp(1.295rem, 1.866vw, 1.625rem);
+}
+
+.card p {
+  font-size: clamp(1.095rem, 1.76vw, 1.275rem);
+  font-weight: 400;
+  max-width: 60ch;
+}
+
+.user-testimony h3,
+.keywords-cards h3,
+.stats h3 {
+  font-size: clamp(1.656rem, 2.143vw, 1.853rem);
+}
+
+/* testimony */
+.testimony-quote {
+  font-size: clamp(1.25rem, 1.793vw, 1.385rem);
+  font-weight: 600;
+}
+
+.author {
+  line-height: 4rem;
+  font-size: clamp(1.05rem, 1.566vw, 1.2rem);
+}
+
+/* keywords cards */
+.kw-card a span {
+  font-size: clamp(1.15rem, 1.215vw, 1.35rem);
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.kw-card a h4 {
+  font-size: 1.85rem;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+
+/* stats  */
+.stat-count span {
+  letter-spacing: 3px;
+  font-size: clamp(1.65rem, 2.745vw, 2.15rem);
+  font-weight: 700;
+}
+
+.stat-count p {
+  text-transform: capitalize;
+  font-size: clamp(1.055rem, 1.364vw, 1.175rem);
+  font-weight: 400;
+}
+
+/* ========================================== generic layout ================================================= */
+/* ============= header ============== */
+header {
+  z-index: 2;
+  position: sticky;
+}
+
+header > .inner-container {
+  padding: 1.5rem;
+  background-color: #2c3e5b;
+  box-shadow: 0px 5px 12px 3px #3e3c3c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo svg,
+.hamburger svg {
+  fill: #afaead;
+}
+
+.logo svg {
+  width: 4.25rem;
+}
+
+.hamburger {
+  width: 4.5rem;
+  padding: 0.6rem;
+  background-color: transparent;
+  border: none;
+}
+
+/* hide the nav in mobile */
+header nav {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: -91vh;
+  transition: all 0.6s ease-in-out 0.05s;
+  z-index: -2;
+}
+
+/* menu list for mobile */
+.show-mob-menu {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 94%;
+  padding: 0;
+  background-color: #161342;
+  transition: all 0.85s ease-in-out 0.05s;
+  z-index: -2;
+}
+
+.nav-links li a,
+.show-mob-menu li a {
+  display: block;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+}
+.nav-links ul {
+  padding: 0;
+}
+.nav-links li a {
+  font-size: 1.025rem;
+  line-height: 3.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 3rem;
+}
+
+/* ============= main ============== */
+/* ---- banner ---- */
+.banner {
+  background: linear-gradient(180deg, #eeeeee00 0%, #00000099 77%),
+    no-repeat 49% 54% / cover url(../img/waterfall-banner-opt.webp);
+  background-blend-mode: darken;
+  height: 32rem;
+  padding: 8rem 0 0 1.5rem;
+  color: white;
+}
+
+.banner input {
+  width: 20rem;
+  padding: 1rem 0.85rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+}
+
+.banner > div a {
+  color: white;
+  font-weight: 700;
+}
+
+/* ============= sections ============== */
+/* ---- cards ---- */
+
+.cards-container,
+.card,
+.icon-placeholder {
+  display: flex;
+}
+
+/* cards container */
+.cards-container {
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+/* individual card */
+.card {
+  flex-direction: column;
+  flex: 1 1 14rem;
+}
+.card > div:last-child {
+  background-color: #2c3e5b;
+  color: #fff;
+  height: 17.5rem;
+  padding: 1.8rem 1.25rem 2.15rem;
+}
+
+/* icon placeholder */
+.icon-placeholder {
+  justify-content: center;
+  align-items: center;
+  background: #f9f8f7;
+  height: 15rem;
+}
+.icon-placeholder svg {
+  width: 10rem;
+}
+
+/* ellipse color */
+.card .svg ellipse {
+  stroke: #2c3e5b;
+}
+
+/* icon color */
+.card .svg path {
+  fill: #798760;
+}
+
+.card h4 {
+  margin-bottom: 1.15rem;
+  font-weight: 700;
+}
+
+/* ---- testimony ---- */
+.testimonials {
+  background: #f9f8f7;
+  padding: 1.1rem 0 2.15rem;
+}
+.testimony-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.user-testimony {
+  margin-top: 1.45rem;
+}
+
+.user-testimony h3 {
+  margin-bottom: 1.05rem;
+}
+
+.testimony-quote {
+  width: 20rem;
+}
+
+/* ---- keywords/category ---- */
+.keywords-cards h3 {
+  padding-left: 3rem;
+}
+.kwbrowse-cards-container {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-areas:
+    'landscape landscape'
+    'things things'
+    'fashion fashion'
+    'people people'
+    'design design'
+    'technology technology'
+    'cooking cooking'
+    'cityscape cityscape'
+    'animals animals'
+    'nature nature';
+}
+
+.kw-card a {
+  display: block;
+  padding: 5rem 0;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+
+.kw-landscapes {
+  background: url(../img/blue-landscape-opt.webp) no-repeat center center /
+    cover;
+  grid-area: landscape;
+}
+
+.kw-things {
+  background: url(../img/old-clock-opt.webp) no-repeat center center / cover;
+  grid-area: things;
+}
+
+.kw-fashion {
+  background: url(../img/elegant-red-formal-fashion-opt.webp) no-repeat center
+    center / cover;
+  grid-area: fashion;
+}
+
+.kw-people {
+  background: url(../img/four-friends-opt.webp) no-repeat center center / cover;
+  grid-area: people;
+}
+
+.kw-design {
+  background: url(../img/bedroom-design-opt.webp) no-repeat center center /
+    cover;
+  grid-area: design;
+}
+
+.kw-tech {
+  background: url(../img/high-end-laptop-opt.webp) no-repeat center center /
+    cover;
+  grid-area: technology;
+}
+
+.kw-cook {
+  background: url(../img/ramen-noodles-opt.webp) no-repeat center center / cover;
+  grid-area: cooking;
+}
+
+.kw-city {
+  background: url(../img/dawn-city-opt.webp) no-repeat center center / cover;
+  grid-area: cityscape;
+}
+
+.kw-animals {
+  background: url(../img/dog-paws-opt.webp) no-repeat center center / cover;
+  grid-area: animals;
+}
+
+.kw-nature {
+  background: url(../img/nature-explorer-opt.webp) no-repeat center center /
+    cover;
+  grid-area: nature;
+}
+
+/* ---- statistics ---- */
+.stats {
+  background-color: #f9f8f7;
+  padding: 2.15rem 6.25rem 5rem;
+}
+
+.stats-container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  gap: 1rem;
+  padding: 1.25rem 2.15rem 0;
+}
+
+.stat-count {
+  flex: 1 1 10rem;
+}
+
+/* ============= footer ============== */
+footer {
+  padding: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #8b8b8b;
+}
+footer > p {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+footer > p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ========================================= media queries ===================================== */
+@media screen and (min-width: 580px) {
+  /* keyword card grid layout will be changed in 2x2*/
+  .kwbrowse-cards-container {
+    grid-template-areas:
+      'landscape things'
+      'fashion people'
+      'design technology'
+      'cooking cityscape'
+      'animals nature';
+  }
+
+  /* footer will be flexed out  */
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  footer > p {
+    flex: 1 1 50%;
+  }
+}
+/* end 580px */
+
+/* grid layout will be changed in 3x3+1*/
+@media screen and (min-width: 800px) {
+  .kwbrowse-cards-container {
+    grid-template-areas:
+      'landscape things fashion'
+      'people design technology'
+      'cooking cityscape animals'
+      'nature nature nature';
+  }
+}
+/* end 800px */
+
+@media screen and (min-width: 900px) {
+  /* testimony content would be flex side by side */
+  .testimony-content {
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    text-align: left;
+  }
+
+  /* profile pic will be overlap */
+  .testimony-profile-pic {
+    position: relative;
+    right: 1rem;
+    bottom: -5rem;
+  }
+
+  /* quote will increase the width */
+  .testimony-quote {
+    width: 27rem;
+  }
+}
+/* end 900px */
+
+@media screen and (min-width: 1020px) {
+  /* =========== header nav ============ */
+  /* hide the hamburger menu */
+  .hamburger {
+    display: none;
+  }
+
+  header > .inner-container {
+    justify-content: space-around;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    width: auto;
+    height: auto;
+    margin-left: 1.55rem;
+    text-align: center;
+    background-color: transparent;
+    display: block;
+    position: sticky;
+    left: 1rem;
+    z-index: 1;
+  }
+
+  .nav-links li a {
+    line-height: 1.5;
+    margin-bottom: 0;
+    padding-left: 0;
+  }
+
+  .nav-links ul {
+    display: flex;
+    padding: 0;
+  }
+
+  .nav-links li {
+    line-height: 1.37;
+    height: auto;
+    margin: 0;
+  }
+
+  .nav-links li a {
+    padding: 1rem 0.75rem;
+  }
+
+  /* =========== banner ===========  */
+  /* banner will have bigger height */
+  .banner {
+    height: 42rem;
+    padding-top: 16rem;
+    padding-left: 10rem;
+  }
+
+  /* line-height for h1 will be default */
+  .banner h2 {
+    line-height: 1.45;
+  }
+
+  /* no spacing for the banner span */
+  .banner span {
+    letter-spacing: 5px;
+  }
+
+  /* input will increase */
+  .banner input {
+    width: 33rem;
+  }
+
+  /* to show that kw cards are hovering in larger screen */
+  .kw-card:hover {
+    background-color: #36903e;
+    background-blend-mode: soft-light;
+  }
+  .kw-card a:hover {
+    color: orange;
+  }
+
+  /* grid layout will be changed in 4x4+2*/
+  .kwbrowse-cards-container {
+    grid-template-areas:
+      'landscape things fashion people'
+      'design technology cooking cityscape'
+      'animals animals nature nature';
+  }
+}
+/* end 1020px */
+
+@media screen and (min-width: 1100px) {
+  /* increased the logo svg */
+  .logo svg {
+    width: 3.75rem;
+  }
+
+  /* input search will reduce to height */
+  .banner input {
+    padding: 0.55rem 0.7rem;
+  }
+
+  .testimony-profile-pic img {
+    width: 90%;
+  }
+
+  .testimony-quote {
+    width: 40ch;
+  }
+}
+/* end 110px */
+
+@media screen and (min-width: 1300px) {
+  /* grid layout will be changed in 5x5*/
+  .kwbrowse-cards-container {
+    grid-template-areas:
+      'landscape things fashion people design'
+      'technology cooking cityscape animals nature';
+  }
+  .keywords-cards h3,
+  .stats h3 {
+    padding-left: 2rem;
+  }
+}
+/* end 1300px */
