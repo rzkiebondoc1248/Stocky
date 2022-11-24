@@ -1,0 +1,22 @@
+nav - Roboto bold (700)
+h1 (Find your Favorite) - Piazzolla Italic Medium
+h1 span (STOCK PHOTOS) - Roboto bold (700)
+Search placeholder - Roboto Regular (400)
+p (banner) - Roboto Regular (400); a (banner) - Roboto Bold (700)
+
+h3 card - Roboto bold (700)
+p card  - Roboto Regular (400)
+
+Testimonials h2 - #2c3e5b color; Roboto bold
+Testi p -  Piazzolla Italic Semi Bold Italic
+
+Keyword h2 - #2c3e5b color; Roboto bold
+Keyword span -  Piazzolla Italic Semi Bold Italic
+Keyword h3 - Roboto Bold
+
+Statistics h2 and Statistics span  - Roboto Bold
+Statistics p - Roboto Regular 
+
+Footer
+Footer span - Roboto Bold
+Footer p - Roboto Regular
