@@ -1,0 +1,119 @@
+/* ============= typography ============== */
+.banner h2,
+.testimony-quote,
+.author,
+.kw-card span {
+	font-family: 'Piazzolla', Georgia, 'Times New Roman', Times, serif;
+}
+
+header,
+.banner span,
+.banner ::placeholder,
+.card,
+.testimonials h3,
+.keywords-cards h3,
+.keywords-cards h4 {
+	font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header,
+.banner span,
+.banner p,
+.card h4,
+.testimonials h3,
+.keywords-cards h3,
+.keywords-cards h4,
+.stats h3,
+.stat-count span {
+	text-transform: uppercase;
+}
+
+.testimonials,
+.keywords-cards h3,
+.stats h3 {
+	color: #2c3e5b;
+	font-weight: 700;
+}
+
+/* banner */
+.banner h2 {
+	text-transform: none;
+	color: #d0cfc5;
+	font-size: clamp(2.375rem, 5.324vw, 2.658rem);
+	font-weight: 500;
+	line-height: 1.35;
+	margin-bottom: 1.25rem;
+	& ::placeholder {
+		font-weight: 400;
+		font-size: clamp(1.05rem, 1.622vw, 1.1rem);
+	}
+
+	span {
+		color: white;
+		font-size: clamp(3.1875rem, 4.571vw, 4.1rem);
+		font-weight: 900;
+		letter-spacing: 2px;
+	}
+
+	p {
+		font-size: clamp(1rem, 1.81vw, 1.2rem);
+		font-weight: 400;
+	}
+}
+
+/* card */
+.card h4 {
+	font-size: clamp(1.295rem, 1.866vw, 1.625rem);
+	p {
+		font-size: clamp(1.095rem, 1.76vw, 1.275rem);
+		font-weight: 400;
+		max-width: 60ch;
+	}
+}
+
+.user-testimony h3,
+.keywords-cards h3,
+.stats h3 {
+	font-size: clamp(1.656rem, 2.143vw, 1.853rem);
+}
+
+/* testimony */
+.testimony-quote {
+	font-size: clamp(1.25rem, 1.793vw, 1.385rem);
+	font-weight: 600;
+}
+
+.author {
+	line-height: 4rem;
+	font-size: clamp(1.05rem, 1.566vw, 1.2rem);
+}
+
+/* keywords cards */
+.kw-card {
+	a {
+		span {
+			font-size: clamp(1.15rem, 1.215vw, 1.35rem);
+			letter-spacing: 2px;
+			font-weight: 600;
+		}
+		h4 {
+			font-size: 1.85rem;
+			letter-spacing: 4px;
+			font-weight: 700;
+		}
+	}
+}
+
+/* stats  */
+.stat-count {
+	span {
+		letter-spacing: 3px;
+		font-size: clamp(1.65rem, 2.745vw, 2.15rem);
+		font-weight: 700;
+	}
+	p {
+		text-transform: capitalize;
+		font-size: clamp(1.055rem, 1.364vw, 1.175rem);
+		font-weight: 400;
+	}
+}
